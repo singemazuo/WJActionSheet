@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Control Action in ActionSheet
 private class WJActionInSheet {
     var title: String
     var action: (() -> Void)?
@@ -18,22 +19,39 @@ private class WJActionInSheet {
     }
 }
 
+/**
+    Action Type
+
+    - Normal:      normal type
+    - Cancel:      Cancel type
+    - Destructive: Destructive type
+*/
 enum WJActionInSheetType: Int {
     case Normal = 0
     case Cancel = 1
     case Destructive = 2
 }
 
+/// UIActionSheet with block
 class WJActionSheet: UIActionSheet {
     
+    /// All available actions
     private var actions = [WJActionInSheet]()
     
     convenience init(title: String) {
         self.init()
+
         self.title = title
         delegate = self
     }
     
+    /**
+        Add Button
+    
+    :param: title  button title
+    :param: type   WJActionInSheetType
+    :param: action action block
+    */
     func addButtonWithTitle(title: String, type: WJActionInSheetType, action: (() -> Void)?) {
         addButtonWithTitle(title)
         actions.append(WJActionInSheet(title: title, action: action))
@@ -44,6 +62,11 @@ class WJActionSheet: UIActionSheet {
         }
     }
     
+    /**
+        Add Cancel Button quickly
+    
+    :param: action action of cancel button
+    */
     func addCancelButtonWithAction(action: (() -> Void)?) {
         let buttonTitle = "Cancel"
         addButtonWithTitle(buttonTitle)
@@ -52,6 +75,7 @@ class WJActionSheet: UIActionSheet {
     }
 }
 
+// MARK: - UIActionSheetDelegate
 extension WJActionSheet: UIActionSheetDelegate {
     
     func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
