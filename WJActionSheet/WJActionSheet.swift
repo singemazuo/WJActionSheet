@@ -68,10 +68,7 @@ class WJActionSheet: UIActionSheet {
     :param: action action of cancel button
     */
     func addCancelButtonWithAction(action: (() -> Void)?) {
-        let buttonTitle = "Cancel"
-        addButtonWithTitle(buttonTitle)
-        actions.append(WJActionInSheet(title: buttonTitle, action: action))
-        cancelButtonIndex = actions.count - 1
+        addButtonWithTitle("Cancel", type: WJActionInSheetType.Cancel, action: action)
     }
 }
 
@@ -79,10 +76,6 @@ class WJActionSheet: UIActionSheet {
 extension WJActionSheet: UIActionSheetDelegate {
     
     func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
-        if buttonIndex == actionSheet.cancelButtonIndex {
-            return
-        }
-        
         if let action = actions[buttonIndex].action {
             action()
         }

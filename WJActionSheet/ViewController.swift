@@ -21,7 +21,9 @@ class ViewController: UIViewController {
         actionSheet.addButtonWithTitle("Button 2", type: WJActionInSheetType.Normal) { () -> Void in
             println("Button 2 is tapped")
         }
-        actionSheet.addCancelButtonWithAction(nil)
+        actionSheet.addCancelButtonWithAction() { () -> Void in
+            println("Cancel is tapped")
+        }
         
         actionSheet.showInView(view)
     }
