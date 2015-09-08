@@ -63,12 +63,14 @@ class WJActionSheet: UIActionSheet {
     }
     
     /**
-        Add Cancel Button quickly
+        Add Cancel button quickly
     
-    :param: action action of cancel button
+    :param: title  cancel button title
+    :param: action action
     */
-    func addCancelButtonWithAction(action: (() -> Void)?) {
-        addButtonWithTitle("Cancel", type: WJActionInSheetType.Cancel, action: action)
+    func addCancelButtonWithTitle(title: String?, action: (() -> Void)?) {
+        let buttonTitle = title == nil ? "Cancel" : title!
+        addButtonWithTitle(buttonTitle, type: WJActionInSheetType.Cancel, action: action)
     }
 }
 
