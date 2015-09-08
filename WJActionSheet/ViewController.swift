@@ -13,6 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let actionSheet = WJActionSheet(title: "Title")
+        actionSheet.addButtonWithTitle("Button 1", type: WJActionInSheetType.Destructive) { () -> Void in
+            println("Button 1 is tapped")
+        }
+        actionSheet.addButtonWithTitle("Button 2", type: WJActionInSheetType.Normal) { () -> Void in
+            println("Button 2 is tapped")
+        }
+        actionSheet.addCancelButtonWithAction(nil)
+        
+        actionSheet.showInView(view)
     }
 
     override func didReceiveMemoryWarning() {
