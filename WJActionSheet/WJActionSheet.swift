@@ -38,10 +38,12 @@ class WJActionSheet: UIActionSheet {
     /// All available actions
     private var actions = [WJActionInSheet]()
     
-    convenience init(title: String) {
+    convenience init(title: String?) {
         self.init()
 
-        self.title = title
+        if let title = title {
+            self.title = title
+        }
         delegate = self
     }
     
