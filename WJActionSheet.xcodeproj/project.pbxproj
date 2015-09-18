@@ -159,6 +159,8 @@
 		DD659D491B9E841C00248E8D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Tung Tran";
 				TargetAttributes = {
@@ -415,6 +417,7 @@
 				DD659D721B9E841C00248E8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD659D731B9E841C00248E8D /* Build configuration list for PBXNativeTarget "WJActionSheetTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +426,7 @@
 				DD659D751B9E841C00248E8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

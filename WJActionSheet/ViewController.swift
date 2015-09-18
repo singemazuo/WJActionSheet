@@ -16,13 +16,13 @@ class ViewController: UIViewController {
         
         let actionSheet = WJActionSheet(title: "Title")
         actionSheet.addButtonWithTitle("Button 1", type: WJActionInSheetType.Destructive) { () -> Void in
-            println("Button 1 is tapped")
+            print("Button 1 is tapped")
         }
         actionSheet.addButtonWithTitle("Button 2", type: WJActionInSheetType.Normal) { () -> Void in
-            println("Button 2 is tapped")
+            print("Button 2 is tapped")
         }
         actionSheet.addCancelButtonWithTitle(nil) { () -> Void in
-            println("Cancel is tapped")
+            print("Cancel is tapped")
         }
         actionSheet.showInView(view)
     }

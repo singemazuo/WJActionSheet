@@ -50,9 +50,9 @@ class WJActionSheet: UIActionSheet {
     /**
         Add Button
     
-        :param: title  button title
-        :param: type   WJActionInSheetType
-        :param: action action block
+        - parameter title:  button title
+        - parameter type:   WJActionInSheetType
+        - parameter action: action block
     */
     func addButtonWithTitle(title: String, type: WJActionInSheetType, action: (() -> Void)?) {
         addButtonWithTitle(title)
@@ -67,8 +67,8 @@ class WJActionSheet: UIActionSheet {
     /**
         Add Cancel button quickly
     
-        :param: title  cancel button title
-        :param: action action
+        - parameter title:  cancel button title
+        - parameter action: action
     */
     func addCancelButtonWithTitle(title: String?, action: (() -> Void)?) {
         let buttonTitle = title == nil ? "Cancel" : title!
